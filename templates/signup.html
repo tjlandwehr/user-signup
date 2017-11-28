@@ -10,7 +10,9 @@
                 </td>
                 <td>
                     <input name="username" type="text" value="{{username}}" />
-                    <span class="error"></span>
+                    <span class="error">{% if username_error %}
+                                            {{username_error}}
+                                        {% endif %}</span>
                 </td>
             </tr>
             <tr>
@@ -19,7 +21,7 @@
                 </td>
                 <td>
                     <input name="password" type="password" />
-                    <span class="error"></span>
+                    <span class="error"{{password_error}}</span>
                 </td>
             </tr>
             <tr>
@@ -28,7 +30,7 @@
                 </td>
                 <td>
                     <input name="verify" type="password" />
-                    <span class="error"></span>
+                    <span class="error">{{verify_error}}</span>
                 </td>
             </tr>
             <tr>
@@ -37,16 +39,12 @@
                 </td>
                 <td>
                     <input name="email" type="text" value="{{email}}" />
-                    <span class="error"></span>
+                    <span class="error">{{email_error}}</span>
                 </td>
             </tr>
         </tbody>
     </table>
     <input type="submit" value="Submit" />
 </form>
-
-{% if error %}
-<p class='error'>{{ error }}</p>
-{% endif %}
 
 {% endblock %}
