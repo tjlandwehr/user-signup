@@ -9,10 +9,8 @@
                     <label for="username">Username</label>
                 </td>
                 <td>
-                    <input name="username" type="text" value="{{username}}" />
-                    <span class="error">{% if username_error %}
-                                            {{username_error}}
-                                        {% endif %}</span>
+                    <input name="username" type="text" {% if username %}value="{{username}}"{% endif %} />
+                    <span class="error">{% if username_error %}{{username_error}}{% endif %}</span>
                 </td>
             </tr>
             <tr>
@@ -21,7 +19,7 @@
                 </td>
                 <td>
                     <input name="password" type="password" />
-                    <span class="error"{{password_error}}</span>
+                    <span class="error">{% if password_error %}{{password_error}}{% endif %}</span>
                 </td>
             </tr>
             <tr>
@@ -30,7 +28,7 @@
                 </td>
                 <td>
                     <input name="verify" type="password" />
-                    <span class="error">{{verify_error}}</span>
+                    <span class="error">{% if verify_error %}{{verify_error}}{% endif %}</span>
                 </td>
             </tr>
             <tr>
@@ -38,8 +36,8 @@
                     <label for="email">Email (optional)</label>
                 </td>
                 <td>
-                    <input name="email" type="text" value="{{email}}" />
-                    <span class="error">{{email_error}}</span>
+                    <input name="email" type="text" {% if email %}value="{{email}}"{% endif %} />
+                    <span class="error">{% if email_error %}{{email_error}}{% endif %}</span>
                 </td>
             </tr>
         </tbody>
